@@ -37,6 +37,10 @@ class ViewController: UIViewController {
     }
 
     @IBAction private func scheneTap(_ sender: UITapGestureRecognizer) {
+        if ship != nil {
+            detectCollision(sender)
+            return
+        }
         let tapLocation = sender.location(in: sceneView)
         let hitTestResults = sceneView.hitTest(tapLocation, types: [.existingPlaneUsingExtent])
 
@@ -45,7 +49,7 @@ class ViewController: UIViewController {
         let y = hitTestResult.worldTransform.columns.3.y
         let z = hitTestResult.worldTransform.columns.3.z
 
-        guard let scene = SCNScene(named: "art.scnassets/ship.scn") else { return }
+        guard let scene = SCNScene(named: "art.scnassets/Medieval_building.scn") else { return }
         let planeNode = scene.rootNode
         planeNode.position = SCNVector3(x: x, y: y, z: z)
         sceneView.scene.rootNode.addChildNode(planeNode)
@@ -65,6 +69,12 @@ class ViewController: UIViewController {
         ship.scale.z *= Float(sender.scale)
 
         sender.scale = 1
+    }
+
+    private func detectCollision(_ sender: UITapGestureRecognizer) {
+        let tapLocation = sender.location(in: sceneView)
+        let hitTestResults = sceneView.hitTest(tapLocation, options: [.searchMode: SCNHitTestSearchMode.closest.rawValue])
+        print(hitTestResults.map { $0.node.name })
     }
 }
 
