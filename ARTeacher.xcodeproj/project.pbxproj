@@ -13,7 +13,7 @@
 		D16724D621EB175500C53224 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D16724D421EB175500C53224 /* Main.storyboard */; };
 		D16724D821EB175600C53224 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D16724D721EB175600C53224 /* Assets.xcassets */; };
 		D16724DB21EB175600C53224 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D16724D921EB175600C53224 /* LaunchScreen.storyboard */; };
-		D16724E321EB17F800C53224 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = D16724E221EB17F800C53224 /* .gitignore */; };
+		D16724E521EB183100C53224 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = D16724E421EB183100C53224 /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +25,7 @@
 		D16724D721EB175600C53224 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D16724DA21EB175600C53224 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D16724DC21EB175600C53224 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D16724E221EB17F800C53224 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = .gitignore; path = "../../Documents/Insoft/Spinn/ios-client-v2/.gitignore"; sourceTree = "<group>"; };
+		D16724E421EB183100C53224 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,7 +42,7 @@
 		D16724C221EB175500C53224 = {
 			isa = PBXGroup;
 			children = (
-				D16724E221EB17F800C53224 /* .gitignore */,
+				D16724E421EB183100C53224 /* .gitignore */,
 				D16724CD21EB175500C53224 /* ARTeacher */,
 				D16724CC21EB175500C53224 /* Products */,
 			);
@@ -128,7 +128,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D16724E321EB17F800C53224 /* .gitignore in Resources */,
+				D16724E521EB183100C53224 /* .gitignore in Resources */,
 				D16724D121EB175500C53224 /* art.scnassets in Resources */,
 				D16724DB21EB175600C53224 /* LaunchScreen.storyboard in Resources */,
 				D16724D821EB175600C53224 /* Assets.xcassets in Resources */,
