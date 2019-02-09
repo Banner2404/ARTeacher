@@ -63,12 +63,6 @@ class ViewController: UIViewController {
         sender.scale = 1
     }
 
-    private func detectCollision(_ sender: UITapGestureRecognizer) {
-        let tapLocation = sender.location(in: sceneView)
-        let hitTestResults = sceneView.hitTest(tapLocation, options: [.searchMode: SCNHitTestSearchMode.closest.rawValue])
-        print(hitTestResults.map { $0.node.name })
-    }
-
     private func setupStateMachine() {
         let placementState = PlacementState(sceneView: sceneView, object: object)
         placementState.delegate = self
