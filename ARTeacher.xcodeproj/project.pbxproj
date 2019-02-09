@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D10C8C30220F406C009721A3 /* SceneState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10C8C2F220F406C009721A3 /* SceneState.swift */; };
+		D10C8C32220F4488009721A3 /* PlacementState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10C8C31220F4488009721A3 /* PlacementState.swift */; };
+		D10C8C34220F44AD009721A3 /* StateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10C8C33220F44AD009721A3 /* StateMachine.swift */; };
+		D10C8C36220F47BC009721A3 /* ObservingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10C8C35220F47BB009721A3 /* ObservingState.swift */; };
 		D16724CF21EB175500C53224 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16724CE21EB175500C53224 /* AppDelegate.swift */; };
 		D16724D121EB175500C53224 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = D16724D021EB175500C53224 /* art.scnassets */; };
 		D16724D321EB175500C53224 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16724D221EB175500C53224 /* ViewController.swift */; };
@@ -17,6 +21,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D10C8C2F220F406C009721A3 /* SceneState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneState.swift; sourceTree = "<group>"; };
+		D10C8C31220F4488009721A3 /* PlacementState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacementState.swift; sourceTree = "<group>"; };
+		D10C8C33220F44AD009721A3 /* StateMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateMachine.swift; sourceTree = "<group>"; };
+		D10C8C35220F47BB009721A3 /* ObservingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservingState.swift; sourceTree = "<group>"; };
 		D16724CB21EB175500C53224 /* ARTeacher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARTeacher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D16724CE21EB175500C53224 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D16724D021EB175500C53224 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -59,8 +67,12 @@
 		D16724CD21EB175500C53224 /* ARTeacher */ = {
 			isa = PBXGroup;
 			children = (
-				D16724CE21EB175500C53224 /* AppDelegate.swift */,
 				D16724D021EB175500C53224 /* art.scnassets */,
+				D16724CE21EB175500C53224 /* AppDelegate.swift */,
+				D10C8C33220F44AD009721A3 /* StateMachine.swift */,
+				D10C8C2F220F406C009721A3 /* SceneState.swift */,
+				D10C8C31220F4488009721A3 /* PlacementState.swift */,
+				D10C8C35220F47BB009721A3 /* ObservingState.swift */,
 				D16724D221EB175500C53224 /* ViewController.swift */,
 				D16724D421EB175500C53224 /* Main.storyboard */,
 				D16724D721EB175600C53224 /* Assets.xcassets */,
@@ -143,7 +155,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D10C8C30220F406C009721A3 /* SceneState.swift in Sources */,
+				D10C8C32220F4488009721A3 /* PlacementState.swift in Sources */,
 				D16724D321EB175500C53224 /* ViewController.swift in Sources */,
+				D10C8C36220F47BC009721A3 /* ObservingState.swift in Sources */,
+				D10C8C34220F44AD009721A3 /* StateMachine.swift in Sources */,
 				D16724CF21EB175500C53224 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

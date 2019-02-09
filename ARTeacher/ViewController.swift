@@ -13,11 +13,15 @@ import SceneKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var sceneView: ARSCNView!
-    var cursor: SCNNode?
-    var ship: SCNNode?
+    @IBOutlet weak var placeObjectButton: UIButton!
+    @IBOutlet weak var arrangeButton: UIButton!
+    private var object: SCNNode!
+    private var stateMachine: StateMachine!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupObject()
+        setupStateMachine()
         sceneView.delegate = self
         sceneView.session.delegate = self
         sceneView.showsStatistics = true
@@ -35,38 +39,26 @@ class ViewController: UIViewController {
         super.viewWillDisappear(animated)
         sceneView.session.pause()
     }
-
-    @IBAction private func scheneTap(_ sender: UITapGestureRecognizer) {
-        if ship != nil {
-            detectCollision(sender)
-            return
-        }
-        let tapLocation = sender.location(in: sceneView)
-        let hitTestResults = sceneView.hitTest(tapLocation, types: [.existingPlaneUsingExtent])
-
-        guard let hitTestResult = hitTestResults.first else { return }
-        let x = hitTestResult.worldTransform.columns.3.x
-        let y = hitTestResult.worldTransform.columns.3.y
-        let z = hitTestResult.worldTransform.columns.3.z
-
-        guard let scene = SCNScene(named: "art.scnassets/Medieval_building.scn") else { return }
-        let planeNode = scene.rootNode
-        planeNode.position = SCNVector3(x: x, y: y, z: z)
-        sceneView.scene.rootNode.addChildNode(planeNode)
-        ship = planeNode
+    
+    @IBAction func placeObjectTap(_ sender: Any) {
+        stateMachine.set(newState: ObservingState.self)
+    }
+    
+    @IBAction func arrangeButtonTap(_ sender: Any) {
+        stateMachine.set(newState: PlacementState.self)
     }
 
     @IBAction private func sceneRotate(_ sender: UIRotationGestureRecognizer) {
-        guard let ship = ship else { return }
-        ship.eulerAngles.y -= Float(sender.rotation)
+        guard let object = object else { return }
+        object.eulerAngles.y -= Float(sender.rotation)
         sender.rotation = 0
     }
 
     @IBAction private func sceneZoom(_ sender: UIPinchGestureRecognizer) {
-        guard let ship = ship else { return }
-        ship.scale.x *= Float(sender.scale)
-        ship.scale.y *= Float(sender.scale)
-        ship.scale.z *= Float(sender.scale)
+        guard let object = object else { return }
+        object.scale.x *= Float(sender.scale)
+        object.scale.y *= Float(sender.scale)
+        object.scale.z *= Float(sender.scale)
 
         sender.scale = 1
     }
@@ -75,6 +67,29 @@ class ViewController: UIViewController {
         let tapLocation = sender.location(in: sceneView)
         let hitTestResults = sceneView.hitTest(tapLocation, options: [.searchMode: SCNHitTestSearchMode.closest.rawValue])
         print(hitTestResults.map { $0.node.name })
+    }
+
+    private func setupStateMachine() {
+        let placementState = PlacementState(sceneView: sceneView, object: object)
+        placementState.delegate = self
+        let observingState = ObservingState(sceneView: sceneView, object: object)
+        observingState.delegate = self
+        stateMachine = StateMachine(states: [placementState, observingState])
+        stateMachine.set(newState: PlacementState.self)
+    }
+
+    private func setupObject() {
+        guard let node = loadObjectNode() else {
+            print("Can't load object node")
+            return
+        }
+        node.isHidden = true
+        self.object = node
+        sceneView.scene.rootNode.addChildNode(node)
+    }
+
+    private func loadObjectNode() -> SCNNode? {
+        return SCNScene(named: "art.scnassets/Medieval_building.scn")?.rootNode
     }
 }
 
@@ -129,24 +144,48 @@ extension ViewController: ARSCNViewDelegate {
 extension ViewController: ARSessionDelegate {
 
     func session(_ session: ARSession, didUpdate frame: ARFrame) {
-        let tapLocation = CGPoint(x: sceneView.frame.width / 2, y: sceneView.frame.height / 2)
-        let hitTestResults = sceneView.hitTest(tapLocation, types: [.existingPlaneUsingExtent])
+        stateMachine.updateFrame()
+    }
+}
 
-        guard let hitTestResult = hitTestResults.first else {
-            cursor?.removeFromParentNode()
-            cursor = nil
-            return
-        }
-        let x = hitTestResult.worldTransform.columns.3.x
-        let y = hitTestResult.worldTransform.columns.3.y
-        let z = hitTestResult.worldTransform.columns.3.z
+// MARK: - UIGestureRecognizerDelegate
+extension ViewController: UIGestureRecognizerDelegate {
 
-        if cursor == nil {
-            let ball = SCNSphere(radius: 0.01)
-            ball.materials.first?.diffuse.contents = UIColor.white
-            cursor = SCNNode(geometry: ball)
-            sceneView.scene.rootNode.addChildNode(cursor!)
-        }
-        cursor?.position = SCNVector3(x: x, y: y, z: z)
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
+}
+
+// MARK: - PlacementStateDelegate
+extension ViewController: PlacementStateDelegate {
+
+    func placementStateDidEnter(_ state: PlacementState) {
+        placeObjectButton.isHidden = false
+    }
+
+    func placementStateDidLeave(_ state: PlacementState) {
+        placeObjectButton.isHidden = true
+    }
+
+    func placementStateDidActivateButton(_ state: PlacementState) {
+        placeObjectButton.isEnabled = true
+        placeObjectButton.alpha = 1.0
+    }
+
+    func placementStateDidDeactivateButton(_ state: PlacementState) {
+        placeObjectButton.isEnabled = false
+        placeObjectButton.alpha = 0.5
+    }
+}
+
+// MARK: - ObservingStateDelegate
+extension ViewController: ObservingStateDelegate {
+
+    func observingStateDidEnter(_ state: ObservingState) {
+        arrangeButton.isHidden = false
+    }
+
+    func observingStateDidLeave(_ state: ObservingState) {
+        arrangeButton.isHidden = true
     }
 }
