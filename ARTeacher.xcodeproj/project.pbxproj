@@ -18,6 +18,8 @@
 		D16724D821EB175600C53224 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D16724D721EB175600C53224 /* Assets.xcassets */; };
 		D16724DB21EB175600C53224 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D16724D921EB175600C53224 /* LaunchScreen.storyboard */; };
 		D16724E521EB183100C53224 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = D16724E421EB183100C53224 /* .gitignore */; };
+		D188F3CB22148222001F52AE /* Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D188F3CA22148222001F52AE /* Annotation.swift */; };
+		D188F3CD2214824E001F52AE /* TextAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D188F3CC2214824E001F52AE /* TextAnnotation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		D16724DA21EB175600C53224 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D16724DC21EB175600C53224 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D16724E421EB183100C53224 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		D188F3CA22148222001F52AE /* Annotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Annotation.swift; sourceTree = "<group>"; };
+		D188F3CC2214824E001F52AE /* TextAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAnnotation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,11 +72,9 @@
 			isa = PBXGroup;
 			children = (
 				D16724D021EB175500C53224 /* art.scnassets */,
+				D188F3C922148202001F52AE /* Models */,
+				D188F3CE22148278001F52AE /* States */,
 				D16724CE21EB175500C53224 /* AppDelegate.swift */,
-				D10C8C33220F44AD009721A3 /* StateMachine.swift */,
-				D10C8C2F220F406C009721A3 /* SceneState.swift */,
-				D10C8C31220F4488009721A3 /* PlacementState.swift */,
-				D10C8C35220F47BB009721A3 /* ObservingState.swift */,
 				D16724D221EB175500C53224 /* ViewController.swift */,
 				D16724D421EB175500C53224 /* Main.storyboard */,
 				D16724D721EB175600C53224 /* Assets.xcassets */,
@@ -80,6 +82,26 @@
 				D16724DC21EB175600C53224 /* Info.plist */,
 			);
 			path = ARTeacher;
+			sourceTree = "<group>";
+		};
+		D188F3C922148202001F52AE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D188F3CA22148222001F52AE /* Annotation.swift */,
+				D188F3CC2214824E001F52AE /* TextAnnotation.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D188F3CE22148278001F52AE /* States */ = {
+			isa = PBXGroup;
+			children = (
+				D10C8C33220F44AD009721A3 /* StateMachine.swift */,
+				D10C8C2F220F406C009721A3 /* SceneState.swift */,
+				D10C8C31220F4488009721A3 /* PlacementState.swift */,
+				D10C8C35220F47BB009721A3 /* ObservingState.swift */,
+			);
+			path = States;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -160,7 +182,9 @@
 				D16724D321EB175500C53224 /* ViewController.swift in Sources */,
 				D10C8C36220F47BC009721A3 /* ObservingState.swift in Sources */,
 				D10C8C34220F44AD009721A3 /* StateMachine.swift in Sources */,
+				D188F3CB22148222001F52AE /* Annotation.swift in Sources */,
 				D16724CF21EB175500C53224 /* AppDelegate.swift in Sources */,
+				D188F3CD2214824E001F52AE /* TextAnnotation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

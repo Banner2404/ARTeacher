@@ -15,8 +15,11 @@ class ViewController: UIViewController {
     @IBOutlet weak var sceneView: ARSCNView!
     @IBOutlet weak var placeObjectButton: UIButton!
     @IBOutlet weak var arrangeButton: UIButton!
+    @IBOutlet weak var viewButton: UIButton!
     private var object: SCNNode!
     private var stateMachine: StateMachine!
+    private var annotations: [Annotation] = [TextAnnotation(anchorId: "anchor1", text: "Hello world"),
+                                             TextAnnotation(anchorId: "anchor2", text: "Hello world 2!")]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +51,10 @@ class ViewController: UIViewController {
         stateMachine.set(newState: PlacementState.self)
     }
 
+    @IBAction func viewButtonTap(_ sender: Any) {
+        //TODO: handle
+    }
+
     @IBAction private func sceneRotate(_ sender: UIRotationGestureRecognizer) {
         guard let object = object else { return }
         object.eulerAngles.y -= Float(sender.rotation)
@@ -66,7 +73,7 @@ class ViewController: UIViewController {
     private func setupStateMachine() {
         let placementState = PlacementState(sceneView: sceneView, object: object)
         placementState.delegate = self
-        let observingState = ObservingState(sceneView: sceneView, object: object)
+        let observingState = ObservingState(sceneView: sceneView, object: object, annotations: annotations)
         observingState.delegate = self
         stateMachine = StateMachine(states: [placementState, observingState])
         stateMachine.set(newState: PlacementState.self)
@@ -177,9 +184,22 @@ extension ViewController: ObservingStateDelegate {
 
     func observingStateDidEnter(_ state: ObservingState) {
         arrangeButton.isHidden = false
+        viewButton.isHidden = false
+        observingStateDidDeactivateAnnotation(state)
     }
 
     func observingStateDidLeave(_ state: ObservingState) {
         arrangeButton.isHidden = true
+        viewButton.isHidden = true
+    }
+
+    func observingStateDidActivateAnnotation(_ state: ObservingState) {
+        viewButton.isEnabled = true
+        viewButton.alpha = 1.0
+    }
+
+    func observingStateDidDeactivateAnnotation(_ state: ObservingState) {
+        viewButton.isEnabled = false
+        viewButton.alpha = 0.5
     }
 }

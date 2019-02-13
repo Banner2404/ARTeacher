@@ -66,9 +66,30 @@
                                     <action selector="arrangeButtonTap:" destination="BV1-FR-VrT" eventType="touchUpInside" id="npM-Hz-JFF"/>
                                 </connections>
                             </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vjg-VK-7vs">
+                                <rect key="frame" x="824" y="1086" width="150" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="I2Q-8B-I7r"/>
+                                    <constraint firstAttribute="height" constant="50" id="Su8-pL-3d4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="20"/>
+                                <state key="normal" title="View">
+                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="viewButtonTap:" destination="BV1-FR-VrT" eventType="touchUpInside" id="7sj-eI-70M"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="bxQ-xG-Khy" firstAttribute="top" secondItem="Vjg-VK-7vs" secondAttribute="bottom" constant="30" id="Kiu-L2-WC5"/>
                             <constraint firstItem="fQZ-KI-GVf" firstAttribute="trailing" secondItem="tXa-3z-uPa" secondAttribute="trailing" id="Nxc-Tb-RAy"/>
                             <constraint firstItem="fQZ-KI-GVf" firstAttribute="bottom" secondItem="bxQ-xG-Khy" secondAttribute="bottom" constant="150" id="OCA-F8-T3j"/>
                             <constraint firstItem="tXa-3z-uPa" firstAttribute="leading" secondItem="fQZ-KI-GVf" secondAttribute="leading" id="Onh-2u-LCE"/>
@@ -77,6 +98,8 @@
                             <constraint firstItem="tXa-3z-uPa" firstAttribute="top" secondItem="fQZ-KI-GVf" secondAttribute="top" id="c2I-53-JJa"/>
                             <constraint firstItem="fQZ-KI-GVf" firstAttribute="bottom" secondItem="CmG-TI-1we" secondAttribute="bottom" constant="150" id="mIA-S6-nF6"/>
                             <constraint firstItem="CmG-TI-1we" firstAttribute="centerX" secondItem="U0K-SW-4ec" secondAttribute="centerX" id="n2c-p9-Hh5"/>
+                            <constraint firstItem="Vjg-VK-7vs" firstAttribute="leading" secondItem="bxQ-xG-Khy" secondAttribute="leading" id="nkY-TU-r0f"/>
+                            <constraint firstItem="Vjg-VK-7vs" firstAttribute="trailing" secondItem="bxQ-xG-Khy" secondAttribute="trailing" id="stg-8o-tAw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fQZ-KI-GVf"/>
                     </view>
@@ -84,6 +107,7 @@
                         <outlet property="arrangeButton" destination="bxQ-xG-Khy" id="FUY-Ss-605"/>
                         <outlet property="placeObjectButton" destination="CmG-TI-1we" id="zuI-vG-xO6"/>
                         <outlet property="sceneView" destination="tXa-3z-uPa" id="aAU-F8-dhw"/>
+                        <outlet property="viewButton" destination="Vjg-VK-7vs" id="thp-dA-1OJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>

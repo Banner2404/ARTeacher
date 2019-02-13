@@ -10,6 +10,8 @@ import Foundation
 
 protocol SceneState {
 
+    var activeAnnotation: Annotation? { get }
+
     func didEnter()
     func didLeave()
     func updateFrame()

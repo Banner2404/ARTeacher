@@ -19,6 +19,8 @@ class PlacementState: SceneState {
 
     weak var delegate: PlacementStateDelegate?
 
+    var activeAnnotation: Annotation? = nil
+
     private let sceneView: ARSCNView
     private let object: SCNNode
 

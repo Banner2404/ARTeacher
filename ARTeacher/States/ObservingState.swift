@@ -11,20 +11,37 @@ import ARKit
 protocol ObservingStateDelegate: class {
     func observingStateDidEnter(_ state: ObservingState)
     func observingStateDidLeave(_ state: ObservingState)
+
+    func observingStateDidActivateAnnotation(_ state: ObservingState)
+    func observingStateDidDeactivateAnnotation(_ state: ObservingState)
+
 }
 
 class ObservingState: SceneState {
 
     weak var delegate: ObservingStateDelegate?
-
+    var activeAnnotation: Annotation? {
+        return annotations.first { $0.anchorId == activatedAnchor?.name }
+    }
+    
     private let sceneView: ARSCNView
     private let object: SCNNode
+    private let annotations: [Annotation]
     private var cursor: SCNNode!
-    private var activatedAnchor: SCNNode?
+    private var activatedAnchor: SCNNode? {
+        didSet {
+            if activatedAnchor != nil {
+                delegate?.observingStateDidActivateAnnotation(self)
+            } else {
+                delegate?.observingStateDidDeactivateAnnotation(self)
+            }
+        }
+    }
 
-    init(sceneView: ARSCNView, object: SCNNode) {
+    init(sceneView: ARSCNView, object: SCNNode, annotations: [Annotation]) {
         self.sceneView = sceneView
         self.object = object
+        self.annotations = annotations
     }
 
     func didEnter() {
@@ -39,17 +56,21 @@ class ObservingState: SceneState {
     }
 
     func updateFrame() {
-        activatedAnchor?.opacity = 1.0
-        activatedAnchor = nil
         let centerOfScreen = CGPoint(x: sceneView.frame.width / 2, y: sceneView.frame.height / 2)
         let hitTestResults = sceneView.hitTest(centerOfScreen, options: [.searchMode: SCNHitTestSearchMode.closest.rawValue,
                                                                          .categoryBitMask: 2])
         guard let hitTestResult = hitTestResults.first else {
             cursor.isHidden = true
+            if activatedAnchor != nil {
+                activatedAnchor?.opacity = 1.0
+                activatedAnchor = nil
+            }
             return
         }
-        activatedAnchor = hitTestResult.node
-        activatedAnchor?.opacity = 0.5
+        if activatedAnchor == nil || activatedAnchor !== hitTestResult.node {
+            activatedAnchor = hitTestResult.node
+            activatedAnchor?.opacity = 0.5
+        }
 
         let x = hitTestResult.worldCoordinates.x
         let y = hitTestResult.worldCoordinates.y
