@@ -1,5 +1,5 @@
 //
-//  TextAnnotation.swift
+//  TextAttachment.swift
 //  ARTeacher
 //
 //  Created by Евгений Соболь on 2/13/19.
@@ -8,8 +8,9 @@
 
 import Foundation
 
-struct TextAnnotation: Annotation {
-    
-    let anchorId: String
+struct TextAttachment: Attachment {
+
+    let name: String
+    let title: String
     let text: String
 }

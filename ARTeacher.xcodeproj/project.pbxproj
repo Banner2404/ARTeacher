@@ -19,7 +19,12 @@
 		D16724DB21EB175600C53224 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D16724D921EB175600C53224 /* LaunchScreen.storyboard */; };
 		D16724E521EB183100C53224 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = D16724E421EB183100C53224 /* .gitignore */; };
 		D188F3CB22148222001F52AE /* Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D188F3CA22148222001F52AE /* Annotation.swift */; };
-		D188F3CD2214824E001F52AE /* TextAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = D188F3CC2214824E001F52AE /* TextAnnotation.swift */; };
+		D188F3D12214897D001F52AE /* AttachmentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D188F3D02214897D001F52AE /* AttachmentsTableViewController.swift */; };
+		D188F3D322148AF0001F52AE /* Attachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D188F3D222148AF0001F52AE /* Attachment.swift */; };
+		D188F3D522148C5C001F52AE /* TextAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D188F3D422148C5C001F52AE /* TextAttachment.swift */; };
+		D188F3D722148FA4001F52AE /* TextAttachmentPreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D188F3D622148FA4001F52AE /* TextAttachmentPreviewController.swift */; };
+		D188F3D922148FD0001F52AE /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D188F3D822148FD0001F52AE /* PreviewViewController.swift */; };
+		D188F3DC2214907C001F52AE /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D188F3DB2214907C001F52AE /* UIViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,7 +42,12 @@
 		D16724DC21EB175600C53224 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D16724E421EB183100C53224 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		D188F3CA22148222001F52AE /* Annotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Annotation.swift; sourceTree = "<group>"; };
-		D188F3CC2214824E001F52AE /* TextAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAnnotation.swift; sourceTree = "<group>"; };
+		D188F3D02214897D001F52AE /* AttachmentsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttachmentsTableViewController.swift; sourceTree = "<group>"; };
+		D188F3D222148AF0001F52AE /* Attachment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attachment.swift; sourceTree = "<group>"; };
+		D188F3D422148C5C001F52AE /* TextAttachment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAttachment.swift; sourceTree = "<group>"; };
+		D188F3D622148FA4001F52AE /* TextAttachmentPreviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAttachmentPreviewController.swift; sourceTree = "<group>"; };
+		D188F3D822148FD0001F52AE /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
+		D188F3DB2214907C001F52AE /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,11 +81,12 @@
 		D16724CD21EB175500C53224 /* ARTeacher */ = {
 			isa = PBXGroup;
 			children = (
+				D16724CE21EB175500C53224 /* AppDelegate.swift */,
 				D16724D021EB175500C53224 /* art.scnassets */,
 				D188F3C922148202001F52AE /* Models */,
 				D188F3CE22148278001F52AE /* States */,
-				D16724CE21EB175500C53224 /* AppDelegate.swift */,
-				D16724D221EB175500C53224 /* ViewController.swift */,
+				D188F3DA2214906E001F52AE /* Extensions */,
+				D188F3CF22148960001F52AE /* ViewControllers */,
 				D16724D421EB175500C53224 /* Main.storyboard */,
 				D16724D721EB175600C53224 /* Assets.xcassets */,
 				D16724D921EB175600C53224 /* LaunchScreen.storyboard */,
@@ -88,7 +99,8 @@
 			isa = PBXGroup;
 			children = (
 				D188F3CA22148222001F52AE /* Annotation.swift */,
-				D188F3CC2214824E001F52AE /* TextAnnotation.swift */,
+				D188F3D222148AF0001F52AE /* Attachment.swift */,
+				D188F3D422148C5C001F52AE /* TextAttachment.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -102,6 +114,25 @@
 				D10C8C35220F47BB009721A3 /* ObservingState.swift */,
 			);
 			path = States;
+			sourceTree = "<group>";
+		};
+		D188F3CF22148960001F52AE /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				D16724D221EB175500C53224 /* ViewController.swift */,
+				D188F3D822148FD0001F52AE /* PreviewViewController.swift */,
+				D188F3D02214897D001F52AE /* AttachmentsTableViewController.swift */,
+				D188F3D622148FA4001F52AE /* TextAttachmentPreviewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		D188F3DA2214906E001F52AE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D188F3DB2214907C001F52AE /* UIViewController.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,14 +208,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D188F3D922148FD0001F52AE /* PreviewViewController.swift in Sources */,
 				D10C8C30220F406C009721A3 /* SceneState.swift in Sources */,
 				D10C8C32220F4488009721A3 /* PlacementState.swift in Sources */,
 				D16724D321EB175500C53224 /* ViewController.swift in Sources */,
 				D10C8C36220F47BC009721A3 /* ObservingState.swift in Sources */,
+				D188F3D322148AF0001F52AE /* Attachment.swift in Sources */,
+				D188F3D722148FA4001F52AE /* TextAttachmentPreviewController.swift in Sources */,
+				D188F3DC2214907C001F52AE /* UIViewController.swift in Sources */,
 				D10C8C34220F44AD009721A3 /* StateMachine.swift in Sources */,
 				D188F3CB22148222001F52AE /* Annotation.swift in Sources */,
+				D188F3D12214897D001F52AE /* AttachmentsTableViewController.swift in Sources */,
+				D188F3D522148C5C001F52AE /* TextAttachment.swift in Sources */,
 				D16724CF21EB175500C53224 /* AppDelegate.swift in Sources */,
-				D188F3CD2214824E001F52AE /* TextAnnotation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

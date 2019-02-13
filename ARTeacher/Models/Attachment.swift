@@ -1,5 +1,5 @@
 //
-//  Annotation.swift
+//  Attachment.swift
 //  ARTeacher
 //
 //  Created by Евгений Соболь on 2/13/19.
@@ -8,8 +8,7 @@
 
 import Foundation
 
-struct Annotation {
+protocol Attachment {
 
-    let anchorId: String
-    let attachments: [Attachment]
+    var name: String { get }
 }

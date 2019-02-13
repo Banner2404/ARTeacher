@@ -18,8 +18,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var viewButton: UIButton!
     private var object: SCNNode!
     private var stateMachine: StateMachine!
-    private var annotations: [Annotation] = [TextAnnotation(anchorId: "anchor1", text: "Hello world"),
-                                             TextAnnotation(anchorId: "anchor2", text: "Hello world 2!")]
+    private var annotations: [Annotation] = [Annotation(anchorId: "anchor1",
+                                                        attachments: [TextAttachment(name: "Method",
+                                                                                     title: "Title",
+                                                                                     text: "Hello world")])]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,7 +54,12 @@ class ViewController: UIViewController {
     }
 
     @IBAction func viewButtonTap(_ sender: Any) {
-        //TODO: handle
+        guard let annotation = stateMachine.activeAnnotation else { return }
+        let viewController: AttachmentsTableViewController = .loadFromStoryboard()
+        viewController.annotation = annotation
+        let navc = UINavigationController(rootViewController: viewController)
+        navc.modalPresentationStyle = .pageSheet
+        present(navc, animated: true, completion: nil)
     }
 
     @IBAction private func sceneRotate(_ sender: UIRotationGestureRecognizer) {

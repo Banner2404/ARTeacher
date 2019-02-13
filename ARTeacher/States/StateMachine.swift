@@ -15,6 +15,10 @@ protocol StateMachineProtocol {
 
 class StateMachine: StateMachineProtocol {
 
+    var activeAnnotation: Annotation? {
+        return activeState?.activeAnnotation
+    }
+
     private let states: [SceneState]
     private var activeState: SceneState?
 
