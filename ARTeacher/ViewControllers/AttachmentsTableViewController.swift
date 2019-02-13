@@ -17,6 +17,12 @@ class AttachmentsTableViewController: PreviewViewController {
         vc.textAttachment = textAttachment
         navigationController?.pushViewController(vc, animated: true)
     }
+
+    func load(webAttachment: WebAttachment) {
+        let vc: WebAttachmentPreviewController = .loadFromStoryboard()
+        vc.attachment = webAttachment
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 //MARK: - UITableViewDataSource
@@ -42,6 +48,8 @@ extension AttachmentsTableViewController: UITableViewDelegate {
         switch attachment {
         case let attachment as TextAttachment:
             load(textAttachment: attachment)
+        case let attachment as WebAttachment:
+            load(webAttachment: attachment)
         default:
             print("Unsopported attachment type")
         }

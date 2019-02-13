@@ -25,6 +25,8 @@
 		D188F3D722148FA4001F52AE /* TextAttachmentPreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D188F3D622148FA4001F52AE /* TextAttachmentPreviewController.swift */; };
 		D188F3D922148FD0001F52AE /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D188F3D822148FD0001F52AE /* PreviewViewController.swift */; };
 		D188F3DC2214907C001F52AE /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D188F3DB2214907C001F52AE /* UIViewController.swift */; };
+		D188F3DE22149327001F52AE /* WebAttachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D188F3DD22149327001F52AE /* WebAttachment.swift */; };
+		D188F3E022149421001F52AE /* WebAttachmentPreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D188F3DF22149421001F52AE /* WebAttachmentPreviewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		D188F3D622148FA4001F52AE /* TextAttachmentPreviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextAttachmentPreviewController.swift; sourceTree = "<group>"; };
 		D188F3D822148FD0001F52AE /* PreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
 		D188F3DB2214907C001F52AE /* UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		D188F3DD22149327001F52AE /* WebAttachment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebAttachment.swift; sourceTree = "<group>"; };
+		D188F3DF22149421001F52AE /* WebAttachmentPreviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebAttachmentPreviewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,7 @@
 				D188F3CA22148222001F52AE /* Annotation.swift */,
 				D188F3D222148AF0001F52AE /* Attachment.swift */,
 				D188F3D422148C5C001F52AE /* TextAttachment.swift */,
+				D188F3DD22149327001F52AE /* WebAttachment.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -123,6 +128,7 @@
 				D188F3D822148FD0001F52AE /* PreviewViewController.swift */,
 				D188F3D02214897D001F52AE /* AttachmentsTableViewController.swift */,
 				D188F3D622148FA4001F52AE /* TextAttachmentPreviewController.swift */,
+				D188F3DF22149421001F52AE /* WebAttachmentPreviewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -211,7 +217,9 @@
 				D188F3D922148FD0001F52AE /* PreviewViewController.swift in Sources */,
 				D10C8C30220F406C009721A3 /* SceneState.swift in Sources */,
 				D10C8C32220F4488009721A3 /* PlacementState.swift in Sources */,
+				D188F3DE22149327001F52AE /* WebAttachment.swift in Sources */,
 				D16724D321EB175500C53224 /* ViewController.swift in Sources */,
+				D188F3E022149421001F52AE /* WebAttachmentPreviewController.swift in Sources */,
 				D10C8C36220F47BC009721A3 /* ObservingState.swift in Sources */,
 				D188F3D322148AF0001F52AE /* Attachment.swift in Sources */,
 				D188F3D722148FA4001F52AE /* TextAttachmentPreviewController.swift in Sources */,

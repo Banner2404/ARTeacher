@@ -15,6 +15,7 @@ class TextAttachmentPreviewController: PreviewViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupNavigationItem(with: textAttachment)
         textView.text = textAttachment.text
     }
 

@@ -21,7 +21,9 @@ class ViewController: UIViewController {
     private var annotations: [Annotation] = [Annotation(anchorId: "anchor1",
                                                         attachments: [TextAttachment(name: "Method",
                                                                                      title: "Title",
-                                                                                     text: "Hello world")])]
+                                                                                     text: "Hello world"),
+                                                                      WebAttachment(name: "Webpage",
+                                                                                    urlString: "https://en.wikipedia.org/wiki/Random-access_memory")])]
 
     override func viewDidLoad() {
         super.viewDidLoad()
