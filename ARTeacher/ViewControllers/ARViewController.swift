@@ -10,20 +10,18 @@ import UIKit
 import ARKit
 import SceneKit
 
-class ViewController: UIViewController {
+class ARViewController: UIViewController {
 
+    var scene: Scene!
     @IBOutlet weak var sceneView: ARSCNView!
     @IBOutlet weak var placeObjectButton: UIButton!
     @IBOutlet weak var arrangeButton: UIButton!
     @IBOutlet weak var viewButton: UIButton!
     private var object: SCNNode!
     private var stateMachine: StateMachine!
-    private var annotations: [Annotation] = [Annotation(anchorId: "anchor1",
-                                                        attachments: [TextAttachment(name: "Method",
-                                                                                     title: "Title",
-                                                                                     text: "Hello world"),
-                                                                      WebAttachment(name: "Webpage",
-                                                                                    urlString: "https://en.wikipedia.org/wiki/Random-access_memory")])]
+    private var annotations: [Annotation] {
+        return scene.annotations
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -99,12 +97,12 @@ class ViewController: UIViewController {
     }
 
     private func loadObjectNode() -> SCNNode? {
-        return SCNScene(named: "art.scnassets/Medieval_building.scn")?.rootNode
+        return SCNScene(named: scene.scenePath)?.rootNode
     }
 }
 
 // MARK: - ARSCNViewDelegate
-extension ViewController: ARSCNViewDelegate {
+extension ARViewController: ARSCNViewDelegate {
 
     func sessionWasInterrupted(_ session: ARSession) {
         print("Session interrupted")
@@ -151,7 +149,7 @@ extension ViewController: ARSCNViewDelegate {
 }
 
 // MARK: - ARSessionDelegate
-extension ViewController: ARSessionDelegate {
+extension ARViewController: ARSessionDelegate {
 
     func session(_ session: ARSession, didUpdate frame: ARFrame) {
         stateMachine.updateFrame()
@@ -159,7 +157,7 @@ extension ViewController: ARSessionDelegate {
 }
 
 // MARK: - UIGestureRecognizerDelegate
-extension ViewController: UIGestureRecognizerDelegate {
+extension ARViewController: UIGestureRecognizerDelegate {
 
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWith otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         return true
@@ -167,7 +165,7 @@ extension ViewController: UIGestureRecognizerDelegate {
 }
 
 // MARK: - PlacementStateDelegate
-extension ViewController: PlacementStateDelegate {
+extension ARViewController: PlacementStateDelegate {
 
     func placementStateDidEnter(_ state: PlacementState) {
         placeObjectButton.isHidden = false
@@ -189,7 +187,7 @@ extension ViewController: PlacementStateDelegate {
 }
 
 // MARK: - ObservingStateDelegate
-extension ViewController: ObservingStateDelegate {
+extension ARViewController: ObservingStateDelegate {
 
     func observingStateDidEnter(_ state: ObservingState) {
         arrangeButton.isHidden = false

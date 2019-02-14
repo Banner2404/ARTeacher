@@ -7,13 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D10076D32215EA2D00B89C53 /* SceneCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10076D22215EA2D00B89C53 /* SceneCollectionViewCell.swift */; };
+		D10076D52215EA7C00B89C53 /* SceneCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10076D42215EA7C00B89C53 /* SceneCollectionViewController.swift */; };
+		D10076D72215EB0000B89C53 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10076D62215EB0000B89C53 /* Scene.swift */; };
 		D10C8C30220F406C009721A3 /* SceneState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10C8C2F220F406C009721A3 /* SceneState.swift */; };
 		D10C8C32220F4488009721A3 /* PlacementState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10C8C31220F4488009721A3 /* PlacementState.swift */; };
 		D10C8C34220F44AD009721A3 /* StateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10C8C33220F44AD009721A3 /* StateMachine.swift */; };
 		D10C8C36220F47BC009721A3 /* ObservingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10C8C35220F47BB009721A3 /* ObservingState.swift */; };
 		D16724CF21EB175500C53224 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16724CE21EB175500C53224 /* AppDelegate.swift */; };
 		D16724D121EB175500C53224 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = D16724D021EB175500C53224 /* art.scnassets */; };
-		D16724D321EB175500C53224 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16724D221EB175500C53224 /* ViewController.swift */; };
+		D16724D321EB175500C53224 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16724D221EB175500C53224 /* ARViewController.swift */; };
 		D16724D621EB175500C53224 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D16724D421EB175500C53224 /* Main.storyboard */; };
 		D16724D821EB175600C53224 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D16724D721EB175600C53224 /* Assets.xcassets */; };
 		D16724DB21EB175600C53224 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D16724D921EB175600C53224 /* LaunchScreen.storyboard */; };
@@ -30,6 +33,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D10076D22215EA2D00B89C53 /* SceneCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCollectionViewCell.swift; sourceTree = "<group>"; };
+		D10076D42215EA7C00B89C53 /* SceneCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCollectionViewController.swift; sourceTree = "<group>"; };
+		D10076D62215EB0000B89C53 /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
 		D10C8C2F220F406C009721A3 /* SceneState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneState.swift; sourceTree = "<group>"; };
 		D10C8C31220F4488009721A3 /* PlacementState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacementState.swift; sourceTree = "<group>"; };
 		D10C8C33220F44AD009721A3 /* StateMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateMachine.swift; sourceTree = "<group>"; };
@@ -37,7 +43,7 @@
 		D16724CB21EB175500C53224 /* ARTeacher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARTeacher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D16724CE21EB175500C53224 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D16724D021EB175500C53224 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
-		D16724D221EB175500C53224 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D16724D221EB175500C53224 /* ARViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARViewController.swift; sourceTree = "<group>"; };
 		D16724D521EB175500C53224 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D16724D721EB175600C53224 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D16724DA21EB175600C53224 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -65,6 +71,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D10076D12215EA0B00B89C53 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D10076D22215EA2D00B89C53 /* SceneCollectionViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		D16724C221EB175500C53224 = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +105,7 @@
 				D188F3CE22148278001F52AE /* States */,
 				D188F3DA2214906E001F52AE /* Extensions */,
 				D188F3CF22148960001F52AE /* ViewControllers */,
+				D10076D12215EA0B00B89C53 /* Views */,
 				D16724D421EB175500C53224 /* Main.storyboard */,
 				D16724D721EB175600C53224 /* Assets.xcassets */,
 				D16724D921EB175600C53224 /* LaunchScreen.storyboard */,
@@ -102,6 +117,7 @@
 		D188F3C922148202001F52AE /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D10076D62215EB0000B89C53 /* Scene.swift */,
 				D188F3CA22148222001F52AE /* Annotation.swift */,
 				D188F3D222148AF0001F52AE /* Attachment.swift */,
 				D188F3D422148C5C001F52AE /* TextAttachment.swift */,
@@ -124,7 +140,8 @@
 		D188F3CF22148960001F52AE /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				D16724D221EB175500C53224 /* ViewController.swift */,
+				D10076D42215EA7C00B89C53 /* SceneCollectionViewController.swift */,
+				D16724D221EB175500C53224 /* ARViewController.swift */,
 				D188F3D822148FD0001F52AE /* PreviewViewController.swift */,
 				D188F3D02214897D001F52AE /* AttachmentsTableViewController.swift */,
 				D188F3D622148FA4001F52AE /* TextAttachmentPreviewController.swift */,
@@ -218,16 +235,19 @@
 				D10C8C30220F406C009721A3 /* SceneState.swift in Sources */,
 				D10C8C32220F4488009721A3 /* PlacementState.swift in Sources */,
 				D188F3DE22149327001F52AE /* WebAttachment.swift in Sources */,
-				D16724D321EB175500C53224 /* ViewController.swift in Sources */,
+				D16724D321EB175500C53224 /* ARViewController.swift in Sources */,
 				D188F3E022149421001F52AE /* WebAttachmentPreviewController.swift in Sources */,
 				D10C8C36220F47BC009721A3 /* ObservingState.swift in Sources */,
 				D188F3D322148AF0001F52AE /* Attachment.swift in Sources */,
 				D188F3D722148FA4001F52AE /* TextAttachmentPreviewController.swift in Sources */,
+				D10076D72215EB0000B89C53 /* Scene.swift in Sources */,
 				D188F3DC2214907C001F52AE /* UIViewController.swift in Sources */,
 				D10C8C34220F44AD009721A3 /* StateMachine.swift in Sources */,
 				D188F3CB22148222001F52AE /* Annotation.swift in Sources */,
 				D188F3D12214897D001F52AE /* AttachmentsTableViewController.swift in Sources */,
+				D10076D32215EA2D00B89C53 /* SceneCollectionViewCell.swift in Sources */,
 				D188F3D522148C5C001F52AE /* TextAttachment.swift in Sources */,
+				D10076D52215EA7C00B89C53 /* SceneCollectionViewController.swift in Sources */,
 				D16724CF21EB175500C53224 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
