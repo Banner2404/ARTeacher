@@ -35,6 +35,7 @@ class ARViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        setupNavigationItem()
         let configuration = ARWorldTrackingConfiguration()
         configuration.planeDetection = [.horizontal]
         sceneView.session.run(configuration, options: [])
@@ -42,6 +43,7 @@ class ARViewController: UIViewController {
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        restoreNavigationItem()
         sceneView.session.pause()
     }
     
@@ -98,6 +100,17 @@ class ARViewController: UIViewController {
 
     private func loadObjectNode() -> SCNNode? {
         return SCNScene(named: scene.scenePath)?.rootNode
+    }
+
+    private func setupNavigationItem() {
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationController?.navigationBar.backgroundColor = UIColor.clear
+
+    }
+
+    private func restoreNavigationItem() {
+        navigationController?.navigationBar.shadowImage = nil
     }
 }
 

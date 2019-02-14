@@ -22,7 +22,8 @@ class SceneCollectionViewController: UIViewController {
         let annotation2 = Annotation(anchorId: "anchor2", attachments: [webAttachment])
 
         let scene = Scene(name: "Test First", scenePath: "art.scnassets/Medieval_building.scn", annotations: [annotation1, annotation2])
-        scenes = [scene]
+        let shipScene = Scene(name: "Ship", scenePath: "art.scnassets/ship.scn", annotations: [])
+        scenes = [scene, shipScene]
     }
 }
 
