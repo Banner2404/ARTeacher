@@ -30,7 +30,8 @@ class ARViewController: UIViewController {
         sceneView.delegate = self
         sceneView.session.delegate = self
         sceneView.showsStatistics = true
-        sceneView.debugOptions = [.showFeaturePoints]
+        updateDebugMode()
+        NotificationCenter.default.addObserver(self, selector: #selector(updateDebugMode), name: UserDefaults.didChangeNotification, object: nil)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -45,6 +46,12 @@ class ARViewController: UIViewController {
         super.viewWillDisappear(animated)
         restoreNavigationItem()
         sceneView.session.pause()
+    }
+
+    @objc
+    func updateDebugMode() {
+        sceneView.showsStatistics = Settings.shared.isDebugModeEnabled
+        sceneView.debugOptions = Settings.shared.isDebugModeEnabled ? [.showFeaturePoints] : []
     }
     
     @IBAction func placeObjectTap(_ sender: Any) {

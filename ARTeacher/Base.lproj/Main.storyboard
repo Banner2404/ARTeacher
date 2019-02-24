@@ -181,6 +181,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fQZ-KI-GVf"/>
                     </view>
+                    <navigationItem key="navigationItem" id="9VX-Sf-eL1">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="qH2-kh-pmi">
+                            <connections>
+                                <segue destination="4Ah-Al-0Ux" kind="popoverPresentation" popoverAnchorBarButtonItem="qH2-kh-pmi" id="mUp-25-L5P">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="arrangeButton" destination="bxQ-xG-Khy" id="FUY-Ss-605"/>
                         <outlet property="placeObjectButton" destination="CmG-TI-1we" id="zuI-vG-xO6"/>
@@ -203,6 +213,64 @@
                 </pinchGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="817.1875" y="8.7890625"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="xld-hQ-EG2">
+            <objects>
+                <tableViewController id="4Ah-Al-0Ux" customClass="SettingsViewController" customModule="ARTeacher" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="G7f-y2-nW5">
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection id="h7Z-XS-Czj">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="pjr-fz-LA1">
+                                        <rect key="frame" x="0.0" y="35" width="300" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pjr-fz-LA1" id="SVX-bH-FFo">
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SpG-9Z-N9u">
+                                                    <rect key="frame" x="235" y="6.5" width="51" height="31"/>
+                                                    <connections>
+                                                        <action selector="debugModeSwitchChanged:" destination="4Ah-Al-0Ux" eventType="valueChanged" id="Dzk-QC-MGB"/>
+                                                    </connections>
+                                                </switch>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Debug Mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j7X-oK-dc6">
+                                                    <rect key="frame" x="16" y="11.5" width="99" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="SpG-9Z-N9u" secondAttribute="trailing" id="FOb-6N-Aih"/>
+                                                <constraint firstItem="j7X-oK-dc6" firstAttribute="centerY" secondItem="SVX-bH-FFo" secondAttribute="centerY" id="Ibx-Qk-7ox"/>
+                                                <constraint firstItem="SpG-9Z-N9u" firstAttribute="centerY" secondItem="SVX-bH-FFo" secondAttribute="centerY" id="tTh-9b-0Gw"/>
+                                                <constraint firstItem="j7X-oK-dc6" firstAttribute="leading" secondItem="SVX-bH-FFo" secondAttribute="leadingMargin" id="xci-5s-tVf"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="4Ah-Al-0Ux" id="FZQ-Vp-IcC"/>
+                            <outlet property="delegate" destination="4Ah-Al-0Ux" id="hAW-s7-FJg"/>
+                        </connections>
+                    </tableView>
+                    <value key="contentSizeForViewInPopover" type="size" width="300" height="300"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="300" height="300"/>
+                    <connections>
+                        <outlet property="debugModeSwitch" destination="SpG-9Z-N9u" id="bv4-6b-dHR"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lg9-et-R4o" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1393" y="-501"/>
         </scene>
         <!--Attachments-->
         <scene sceneID="KrX-S0-W2q">
