@@ -22,28 +22,27 @@
                                 <rect key="frame" x="0.0" y="70" width="768" height="954"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="g1P-TU-UD8">
-                                    <size key="itemSize" width="200" height="200"/>
+                                    <size key="itemSize" width="300" height="300"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SceneCell" id="qV4-5b-OVj" customClass="SceneCollectionViewCell" customModule="ARTeacher" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pD0-Y0-mQg">
-                                                    <rect key="frame" x="5" y="5" width="190" height="126.5"/>
-                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kSM-iA-MGr">
+                                                    <rect key="frame" x="5" y="5" width="290" height="241.5"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" secondItem="pD0-Y0-mQg" secondAttribute="height" multiplier="3:2" id="X3v-Kb-S7f"/>
+                                                        <constraint firstAttribute="width" secondItem="kSM-iA-MGr" secondAttribute="height" multiplier="6:5" id="c1g-5M-CYF"/>
                                                     </constraints>
-                                                </view>
+                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a00-ZL-GmF">
-                                                    <rect key="frame" x="18" y="141.5" width="164" height="21"/>
+                                                    <rect key="frame" x="18" y="256.5" width="264" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -52,14 +51,15 @@
                                         </view>
                                         <constraints>
                                             <constraint firstItem="a00-ZL-GmF" firstAttribute="leading" secondItem="qV4-5b-OVj" secondAttribute="leadingMargin" constant="10" id="3rS-jV-ytF"/>
-                                            <constraint firstItem="a00-ZL-GmF" firstAttribute="top" secondItem="pD0-Y0-mQg" secondAttribute="bottom" constant="10" id="5lm-gX-kTQ"/>
+                                            <constraint firstAttribute="trailing" secondItem="kSM-iA-MGr" secondAttribute="trailing" constant="5" id="8LX-1x-YFp"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="a00-ZL-GmF" secondAttribute="trailing" constant="10" id="9mz-YM-FKv"/>
-                                            <constraint firstItem="pD0-Y0-mQg" firstAttribute="leading" secondItem="qV4-5b-OVj" secondAttribute="leading" constant="5" id="EkK-W9-e4o"/>
-                                            <constraint firstItem="pD0-Y0-mQg" firstAttribute="top" secondItem="qV4-5b-OVj" secondAttribute="top" constant="5" id="Ldf-kn-evB"/>
+                                            <constraint firstItem="a00-ZL-GmF" firstAttribute="top" secondItem="kSM-iA-MGr" secondAttribute="bottom" constant="10" id="AlC-bN-qJH"/>
+                                            <constraint firstItem="kSM-iA-MGr" firstAttribute="top" secondItem="qV4-5b-OVj" secondAttribute="top" constant="5" id="I21-gD-SGm"/>
                                             <constraint firstItem="a00-ZL-GmF" firstAttribute="centerX" secondItem="qV4-5b-OVj" secondAttribute="centerX" id="NMI-1a-8XI"/>
-                                            <constraint firstAttribute="trailing" secondItem="pD0-Y0-mQg" secondAttribute="trailing" constant="5" id="sSm-7A-QR8"/>
+                                            <constraint firstItem="kSM-iA-MGr" firstAttribute="leading" secondItem="qV4-5b-OVj" secondAttribute="leading" constant="5" id="jdf-bL-XKk"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="sceneImageView" destination="kSM-iA-MGr" id="bYV-ae-iAK"/>
                                             <outlet property="sceneLabel" destination="a00-ZL-GmF" id="ofH-Ej-7QN"/>
                                         </connections>
                                     </collectionViewCell>

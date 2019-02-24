@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import SceneKit
 
 class SceneCollectionViewController: UIViewController {
 
     var scenes: [Scene] = []
+    let sceneView = SCNView(frame: CGRect(x: 0, y: 0, width: 300, height: 300))
     @IBOutlet weak var collectionView: UICollectionView!
 
     override func viewDidLoad() {
@@ -36,7 +38,11 @@ extension SceneCollectionViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SceneCell", for: indexPath) as! SceneCollectionViewCell
-        cell.sceneLabel.text = scenes[indexPath.row].name
+        let scene = scenes[indexPath.row]
+        cell.sceneLabel.text = scene.name
+        sceneView.scene = SCNScene(named: scene.scenePath)
+        sceneView.scene?.rootNode.eulerAngles.y = .pi / 3
+        cell.sceneImageView.image = sceneView.snapshot()
         return cell
     }
 }

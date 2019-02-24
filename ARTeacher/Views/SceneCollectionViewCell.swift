@@ -11,5 +11,6 @@ import UIKit
 class SceneCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var sceneLabel: UILabel!
-    
+    @IBOutlet weak var sceneImageView: UIImageView!
+
 }
