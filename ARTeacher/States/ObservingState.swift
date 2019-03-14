@@ -28,11 +28,15 @@ class ObservingState: SceneState {
     private let object: SCNNode
     private let annotations: [Annotation]
     private var cursor: SCNNode!
+    private lazy var popoverNode: SCNNode = createPopover()
+    private lazy var popoverText: SCNText = createTextShape()
     private var activatedAnchor: SCNNode? {
         didSet {
             if activatedAnchor != nil {
+                popoverNode.isHidden = false
                 delegate?.observingStateDidActivateAnnotation(self)
             } else {
+                popoverNode.isHidden = true
                 delegate?.observingStateDidDeactivateAnnotation(self)
             }
         }
@@ -67,8 +71,14 @@ class ObservingState: SceneState {
             }
             return
         }
+
         if activatedAnchor == nil || activatedAnchor !== hitTestResult.node {
             activatedAnchor = hitTestResult.node
+            popoverText.string = activeAnnotation?.anchorId
+            popoverNode.worldPosition = hitTestResult.node.worldPosition
+            popoverNode.worldPosition.y += 0
+            popoverNode.removeFromParentNode()
+            sceneView.scene.rootNode.addChildNode(popoverNode)
             activatedAnchor?.opacity = 0.5
         }
 
@@ -87,4 +97,26 @@ class ObservingState: SceneState {
         sceneView.scene.rootNode.addChildNode(cursor)
         return cursor
     }
+
+    private func createPopover() -> SCNNode {
+        let node = SCNNode(geometry: popoverText)
+        node.constraints = [SCNBillboardConstraint()]
+        node.isHidden = true
+        node.renderingOrder = 1000
+        node.scale = SCNVector3(0.04, 0.04, 0.04)
+        sceneView.scene.rootNode.addChildNode(node)
+        return node
+    }
+
+    func createTextShape() -> SCNText {
+        let text = SCNText(string: "", extrusionDepth: 0.1)
+        text.font = UIFont.systemFont(ofSize: 1.0)
+        text.flatness = 0.01
+        text.materials.first?.diffuse.contents = UIColor.white
+        text.materials.first?.readsFromDepthBuffer = false
+        text.materials.first?.writesToDepthBuffer = false
+        return text
+    }
+
+
 }
