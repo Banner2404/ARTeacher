@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		54826E3701F0D118436AAE9C /* Pods_ARTeacher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3BBB5ECC09260184C6B18040 /* Pods_ARTeacher.framework */; };
 		D10076D32215EA2D00B89C53 /* SceneCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10076D22215EA2D00B89C53 /* SceneCollectionViewCell.swift */; };
 		D10076D52215EA7C00B89C53 /* SceneCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10076D42215EA7C00B89C53 /* SceneCollectionViewController.swift */; };
 		D10076D72215EB0000B89C53 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10076D62215EB0000B89C53 /* Scene.swift */; };
@@ -40,6 +41,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3224A85C6A7E9D4266549F0D /* Pods-ARTeacher.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARTeacher.debug.xcconfig"; path = "Target Support Files/Pods-ARTeacher/Pods-ARTeacher.debug.xcconfig"; sourceTree = "<group>"; };
+		3BBB5ECC09260184C6B18040 /* Pods_ARTeacher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ARTeacher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		82122F9FEB00BEE22117D4CA /* Pods-ARTeacher.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ARTeacher.release.xcconfig"; path = "Target Support Files/Pods-ARTeacher/Pods-ARTeacher.release.xcconfig"; sourceTree = "<group>"; };
 		D10076D22215EA2D00B89C53 /* SceneCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCollectionViewCell.swift; sourceTree = "<group>"; };
 		D10076D42215EA7C00B89C53 /* SceneCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCollectionViewController.swift; sourceTree = "<group>"; };
 		D10076D62215EB0000B89C53 /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
@@ -80,12 +84,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54826E3701F0D118436AAE9C /* Pods_ARTeacher.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		08E385BF870E6B7354015594 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3BBB5ECC09260184C6B18040 /* Pods_ARTeacher.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AD94413E2092B8D75E1E49EB /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3224A85C6A7E9D4266549F0D /* Pods-ARTeacher.debug.xcconfig */,
+				82122F9FEB00BEE22117D4CA /* Pods-ARTeacher.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		D10076D12215EA0B00B89C53 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -100,6 +123,8 @@
 				D16724E421EB183100C53224 /* .gitignore */,
 				D16724CD21EB175500C53224 /* ARTeacher */,
 				D16724CC21EB175500C53224 /* Products */,
+				AD94413E2092B8D75E1E49EB /* Pods */,
+				08E385BF870E6B7354015594 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -188,9 +213,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D16724DF21EB175600C53224 /* Build configuration list for PBXNativeTarget "ARTeacher" */;
 			buildPhases = (
+				219BF36A8F3E7A939BBD0FEB /* [CP] Check Pods Manifest.lock */,
 				D16724C721EB175500C53224 /* Sources */,
 				D16724C821EB175500C53224 /* Frameworks */,
 				D16724C921EB175500C53224 /* Resources */,
+				53C953963598CEE7B5600E71 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -251,6 +278,53 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		219BF36A8F3E7A939BBD0FEB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ARTeacher-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		53C953963598CEE7B5600E71 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ARTeacher/Pods-ARTeacher-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Zip/Zip.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Zip.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ARTeacher/Pods-ARTeacher-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D16724C721EB175500C53224 /* Sources */ = {
@@ -422,6 +496,7 @@
 		};
 		D16724E021EB175600C53224 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3224A85C6A7E9D4266549F0D /* Pods-ARTeacher.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -440,6 +515,7 @@
 		};
 		D16724E121EB175600C53224 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 82122F9FEB00BEE22117D4CA /* Pods-ARTeacher.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

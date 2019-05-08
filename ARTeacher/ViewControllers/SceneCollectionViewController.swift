@@ -35,7 +35,15 @@ class SceneCollectionViewController: UIViewController {
 //
 //        scenes = [scene, shipScene, tankScene, keyboardScene]
         SceneLoader.shared.checkModels { result in
-            print(result)
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let scenes):
+                    self.scenes = scenes
+                    self.collectionView.reloadData()
+                case .failure(let error):
+                    print(error)
+                }
+            }
         }
     }
 }
@@ -51,7 +59,7 @@ extension SceneCollectionViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "SceneCell", for: indexPath) as! SceneCollectionViewCell
         let scene = scenes[indexPath.row]
         cell.sceneLabel.text = scene.name
-        sceneView.scene = SCNScene(named: scene.scenePath)
+        sceneView.scene = try! SCNScene(url: FileManager.default.applicationSupport.appendingPathComponent(scene.scenePath), options: nil)
         sceneView.scene?.rootNode.eulerAngles.y = .pi / 3
         cell.sceneImageView.image = sceneView.snapshot()
         return cell

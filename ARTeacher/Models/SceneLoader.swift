@@ -7,12 +7,13 @@
 //
 
 import Foundation
+import Zip
 
 class SceneLoader {
 
     static let shared = SceneLoader()
     let session = URLSession.shared
-    let host = "http://0.0.0.0:8000/"
+    let host = "http://192.168.31.222:8000/"
 
     func checkModels(completion: @escaping (Result<[Scene], SceneLoaderError>) -> Void) {
         session.dataTask(with: URL(string: host + "check")!) { data, response, error in
@@ -22,23 +23,28 @@ class SceneLoader {
             }
             if let data = data, let graph = try? JSONDecoder().decode(Graph.self, from: data) {
                 print(graph)
-                completion(.success(graph.scenes))
-                self.loadModels { _ in }
+                self.loadModels { result in
+                    if result {
+                        completion(.success(graph.scenes))
+                    } else {
+                        completion(.failure(.unknown))
+                    }
+                }
             } else {
                 completion(.failure(.unknown))
             }
         }.resume()
     }
 
-    func loadModels(completion: @escaping (Result<[Scene], SceneLoaderError>) -> Void) {
+    func loadModels(completion: @escaping (Bool) -> Void) {
         session.downloadTask(with: URL(string: host + "data.zip")!) { url, response, error in
             if let error = error {
                 print(error)
-                completion(.failure(.unknown))
+                completion(false)
             }
             if let url = url {
                 self.copy(url)
-                completion(.success([]))
+                completion(true)
             }
         }.resume()
     }
@@ -48,6 +54,11 @@ class SceneLoader {
         try? FileManager.default.removeItem(at: newUrl)
         try! FileManager.default.copyItem(at: url, to: newUrl)
         print(newUrl)
+        unzip(newUrl)
+    }
+
+    func unzip(_ url: URL) {
+        try! Zip.unzipFile(url, destination: FileManager.default.applicationSupport, overwrite: true, password: nil)
     }
 
     struct Graph: Decodable {
