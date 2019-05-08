@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct WebAttachment: Attachment {
+struct WebAttachment: Attachment, Decodable {
 
     let name: String
     let urlString: String

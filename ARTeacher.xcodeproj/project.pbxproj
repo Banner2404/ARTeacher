@@ -17,6 +17,7 @@
 		D10C8C36220F47BC009721A3 /* ObservingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10C8C35220F47BB009721A3 /* ObservingState.swift */; };
 		D15BFDE92282C35600F29B1D /* SceneLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15BFDE82282C35600F29B1D /* SceneLoader.swift */; };
 		D15BFDEB2282C83300F29B1D /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15BFDEA2282C83300F29B1D /* FileManager.swift */; };
+		D15BFDED2282CD6700F29B1D /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D15BFDEC2282CD6600F29B1D /* WebKit.framework */; };
 		D16724CF21EB175500C53224 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16724CE21EB175500C53224 /* AppDelegate.swift */; };
 		D16724D121EB175500C53224 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = D16724D021EB175500C53224 /* art.scnassets */; };
 		D16724D321EB175500C53224 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16724D221EB175500C53224 /* ARViewController.swift */; };
@@ -54,6 +55,7 @@
 		D10C8C35220F47BB009721A3 /* ObservingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservingState.swift; sourceTree = "<group>"; };
 		D15BFDE82282C35600F29B1D /* SceneLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneLoader.swift; sourceTree = "<group>"; };
 		D15BFDEA2282C83300F29B1D /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
+		D15BFDEC2282CD6600F29B1D /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		D16724CB21EB175500C53224 /* ARTeacher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARTeacher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D16724CE21EB175500C53224 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D16724D021EB175500C53224 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D15BFDED2282CD6700F29B1D /* WebKit.framework in Frameworks */,
 				54826E3701F0D118436AAE9C /* Pods_ARTeacher.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -94,6 +97,7 @@
 		08E385BF870E6B7354015594 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D15BFDEC2282CD6600F29B1D /* WebKit.framework */,
 				3BBB5ECC09260184C6B18040 /* Pods_ARTeacher.framework */,
 			);
 			name = Frameworks;
@@ -105,7 +109,6 @@
 				3224A85C6A7E9D4266549F0D /* Pods-ARTeacher.debug.xcconfig */,
 				82122F9FEB00BEE22117D4CA /* Pods-ARTeacher.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
