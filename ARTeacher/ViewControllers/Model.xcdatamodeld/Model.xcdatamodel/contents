@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14490.98" systemVersion="18E226" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Annotation" representedClassName="Annotation" syncable="YES" codeGenerationType="class">
+        <attribute name="anchor" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="attachments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Attachment" inverseName="annotation" inverseEntity="Attachment" syncable="YES"/>
+        <relationship name="scene" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Scene" inverseName="annotations" inverseEntity="Scene" syncable="YES"/>
+    </entity>
+    <entity name="Attachment" representedClassName="Attachment" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="annotation" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Annotation" inverseName="attachments" inverseEntity="Annotation" syncable="YES"/>
+    </entity>
+    <entity name="PDFAttachment" representedClassName="PDFAttachment" parentEntity="Attachment" syncable="YES" codeGenerationType="class">
+        <attribute name="path" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="Scene" representedClassName="Scene" syncable="YES" codeGenerationType="class">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="path" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="annotations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Annotation" inverseName="scene" inverseEntity="Annotation" syncable="YES"/>
+    </entity>
+    <entity name="TextAttachment" representedClassName="TextAttachment" parentEntity="Attachment" syncable="YES" codeGenerationType="class">
+        <attribute name="text" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <entity name="WebAttachment" representedClassName="WebAttachment" parentEntity="Attachment" syncable="YES" codeGenerationType="class">
+        <attribute name="urlString" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Scene" positionX="-0.1328125" positionY="74.15234375" width="128" height="88"/>
+        <element name="Annotation" positionX="183.71484375" positionY="58.7578125" width="128" height="103"/>
+        <element name="Attachment" positionX="379.84765625" positionY="102.80078125" width="128" height="73"/>
+        <element name="TextAttachment" positionX="493.12109375" positionY="198.0234375" width="128" height="73"/>
+        <element name="WebAttachment" positionX="282.66796875" positionY="198.10546875" width="128" height="58"/>
+        <element name="PDFAttachment" positionX="382.29296875" positionY="286.8125" width="128" height="58"/>
+    </elements>
+</model>

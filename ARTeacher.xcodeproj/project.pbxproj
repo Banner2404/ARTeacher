@@ -32,12 +32,16 @@
 		D188F3E022149421001F52AE /* WebAttachmentPreviewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D188F3DF22149421001F52AE /* WebAttachmentPreviewController.swift */; };
 		D1A8C8482222AE4300DE460C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A8C8472222AE4300DE460C /* SettingsViewController.swift */; };
 		D1A8C84A2222AF0700DE460C /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A8C8492222AF0700DE460C /* Settings.swift */; };
+		D1BCC1DE223ABE0F0036AAC7 /* plane.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = D1BCC1DD223ABE0F0036AAC7 /* plane.scnassets */; };
+		D1BCC1E0223ABE850036AAC7 /* laptop.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = D1BCC1DF223ABE850036AAC7 /* laptop.scnassets */; };
+		D1BCC1E4223AC5DF0036AAC7 /* computer.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = D1BCC1E3223AC5DF0036AAC7 /* computer.scnassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D10076D22215EA2D00B89C53 /* SceneCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCollectionViewCell.swift; sourceTree = "<group>"; };
 		D10076D42215EA7C00B89C53 /* SceneCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCollectionViewController.swift; sourceTree = "<group>"; };
 		D10076D62215EB0000B89C53 /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
+		D103B3042261B8230076F392 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		D10C8C2F220F406C009721A3 /* SceneState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneState.swift; sourceTree = "<group>"; };
 		D10C8C31220F4488009721A3 /* PlacementState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacementState.swift; sourceTree = "<group>"; };
 		D10C8C33220F44AD009721A3 /* StateMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateMachine.swift; sourceTree = "<group>"; };
@@ -62,6 +66,9 @@
 		D188F3DF22149421001F52AE /* WebAttachmentPreviewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebAttachmentPreviewController.swift; sourceTree = "<group>"; };
 		D1A8C8472222AE4300DE460C /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		D1A8C8492222AF0700DE460C /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		D1BCC1DD223ABE0F0036AAC7 /* plane.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = plane.scnassets; sourceTree = "<group>"; };
+		D1BCC1DF223ABE850036AAC7 /* laptop.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = laptop.scnassets; sourceTree = "<group>"; };
+		D1BCC1E3223AC5DF0036AAC7 /* computer.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = computer.scnassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +111,9 @@
 			isa = PBXGroup;
 			children = (
 				D16724CE21EB175500C53224 /* AppDelegate.swift */,
+				D1BCC1E3223AC5DF0036AAC7 /* computer.scnassets */,
+				D1BCC1DF223ABE850036AAC7 /* laptop.scnassets */,
+				D1BCC1DD223ABE0F0036AAC7 /* plane.scnassets */,
 				D16724D021EB175500C53224 /* art.scnassets */,
 				D188F3C922148202001F52AE /* Models */,
 				D188F3CE22148278001F52AE /* States */,
@@ -152,6 +162,7 @@
 				D188F3D02214897D001F52AE /* AttachmentsTableViewController.swift */,
 				D188F3D622148FA4001F52AE /* TextAttachmentPreviewController.swift */,
 				D188F3DF22149421001F52AE /* WebAttachmentPreviewController.swift */,
+				D103B3032261B8230076F392 /* Model.xcdatamodeld */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -222,10 +233,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D1BCC1E0223ABE850036AAC7 /* laptop.scnassets in Resources */,
+				D1BCC1DE223ABE0F0036AAC7 /* plane.scnassets in Resources */,
 				D16724E521EB183100C53224 /* .gitignore in Resources */,
 				D16724D121EB175500C53224 /* art.scnassets in Resources */,
 				D16724DB21EB175600C53224 /* LaunchScreen.storyboard in Resources */,
 				D16724D821EB175600C53224 /* Assets.xcassets in Resources */,
+				D1BCC1E4223AC5DF0036AAC7 /* computer.scnassets in Resources */,
 				D16724D621EB175500C53224 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -456,6 +470,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		D103B3032261B8230076F392 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				D103B3042261B8230076F392 /* Model.xcdatamodel */,
+			);
+			currentVersion = D103B3042261B8230076F392 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D16724C321EB175500C53224 /* Project object */;
 }

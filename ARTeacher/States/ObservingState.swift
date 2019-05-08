@@ -74,7 +74,7 @@ class ObservingState: SceneState {
 
         if activatedAnchor == nil || activatedAnchor !== hitTestResult.node {
             activatedAnchor = hitTestResult.node
-            popoverText.string = activeAnnotation?.anchorId
+            popoverText.string = activeAnnotation?.title
             popoverNode.worldPosition = hitTestResult.node.worldPosition
             popoverNode.worldPosition.y += 0
             popoverNode.removeFromParentNode()

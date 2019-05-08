@@ -10,6 +10,7 @@ import Foundation
 
 struct Annotation {
 
+    let title: String
     let anchorId: String
     let attachments: [Attachment]
 }
