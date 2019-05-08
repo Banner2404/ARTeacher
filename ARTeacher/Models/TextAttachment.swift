@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct TextAttachment: Attachment {
+struct TextAttachment: Attachment, Decodable {
 
     let name: String
     let title: String

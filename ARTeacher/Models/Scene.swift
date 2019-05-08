@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Scene {
+struct Scene: Decodable {
     let name: String
     let scenePath: String
     let annotations: [Annotation]

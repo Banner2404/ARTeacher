@@ -14,6 +14,8 @@
 		D10C8C32220F4488009721A3 /* PlacementState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10C8C31220F4488009721A3 /* PlacementState.swift */; };
 		D10C8C34220F44AD009721A3 /* StateMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10C8C33220F44AD009721A3 /* StateMachine.swift */; };
 		D10C8C36220F47BC009721A3 /* ObservingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = D10C8C35220F47BB009721A3 /* ObservingState.swift */; };
+		D15BFDE92282C35600F29B1D /* SceneLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15BFDE82282C35600F29B1D /* SceneLoader.swift */; };
+		D15BFDEB2282C83300F29B1D /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D15BFDEA2282C83300F29B1D /* FileManager.swift */; };
 		D16724CF21EB175500C53224 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16724CE21EB175500C53224 /* AppDelegate.swift */; };
 		D16724D121EB175500C53224 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = D16724D021EB175500C53224 /* art.scnassets */; };
 		D16724D321EB175500C53224 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D16724D221EB175500C53224 /* ARViewController.swift */; };
@@ -46,6 +48,8 @@
 		D10C8C31220F4488009721A3 /* PlacementState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlacementState.swift; sourceTree = "<group>"; };
 		D10C8C33220F44AD009721A3 /* StateMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StateMachine.swift; sourceTree = "<group>"; };
 		D10C8C35220F47BB009721A3 /* ObservingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservingState.swift; sourceTree = "<group>"; };
+		D15BFDE82282C35600F29B1D /* SceneLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneLoader.swift; sourceTree = "<group>"; };
+		D15BFDEA2282C83300F29B1D /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 		D16724CB21EB175500C53224 /* ARTeacher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ARTeacher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D16724CE21EB175500C53224 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D16724D021EB175500C53224 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
@@ -137,6 +141,7 @@
 				D188F3D422148C5C001F52AE /* TextAttachment.swift */,
 				D188F3DD22149327001F52AE /* WebAttachment.swift */,
 				D1A8C8492222AF0700DE460C /* Settings.swift */,
+				D15BFDE82282C35600F29B1D /* SceneLoader.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -171,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				D188F3DB2214907C001F52AE /* UIViewController.swift */,
+				D15BFDEA2282C83300F29B1D /* FileManager.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -258,8 +264,10 @@
 				D16724D321EB175500C53224 /* ARViewController.swift in Sources */,
 				D1A8C8482222AE4300DE460C /* SettingsViewController.swift in Sources */,
 				D188F3E022149421001F52AE /* WebAttachmentPreviewController.swift in Sources */,
+				D15BFDEB2282C83300F29B1D /* FileManager.swift in Sources */,
 				D10C8C36220F47BC009721A3 /* ObservingState.swift in Sources */,
 				D188F3D322148AF0001F52AE /* Attachment.swift in Sources */,
+				D15BFDE92282C35600F29B1D /* SceneLoader.swift in Sources */,
 				D188F3D722148FA4001F52AE /* TextAttachmentPreviewController.swift in Sources */,
 				D10076D72215EB0000B89C53 /* Scene.swift in Sources */,
 				D188F3DC2214907C001F52AE /* UIViewController.swift in Sources */,

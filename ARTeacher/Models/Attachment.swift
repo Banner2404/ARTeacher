@@ -12,3 +12,34 @@ protocol Attachment {
 
     var name: String { get }
 }
+
+enum AttachmentDecodable: Decodable {
+
+    case text(TextAttachment)
+
+    var attachment: Attachment {
+        switch self {
+        case .text(let attachment):
+            return attachment
+        }
+    }
+
+    enum CodingKeys: String, CodingKey {
+        case type
+    }
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        let type = try container.decode(String.self, forKey: .type)
+        switch type {
+        case "text":
+            self = .text(try TextAttachment(from: decoder))
+        default:
+            throw ParsingError.unsupportedType
+        }
+    }
+
+    enum ParsingError: Error {
+        case unsupportedType
+    }
+}
